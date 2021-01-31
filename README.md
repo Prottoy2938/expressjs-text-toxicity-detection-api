@@ -6,7 +6,14 @@
 
 **You can modify the whole template to your match your needs**
 
-A usage Example:
+## How Its Built
+
+- Its uses [Tensorflow Text Toxicity](https://github.com/tensorflow/tfjs-models/tree/master/toxicity) model to check toxicity level
+- The API is built on Nodejs with help from Express
+
+## Usage
+
+Code sample:
 
 ```js
 const {
@@ -17,6 +24,10 @@ const {
 });
 ```
 
-<br />
+## Use Cases
 
-Heres a demo application where I used the API: https://detect-text-toxicity.vercel.app/
+- Quickly deploying an API that can filter out inappropriate comments such as general insult, threat, identity attacks, sexual explicit comments from application.
+
+## Demo
+
+Heres a demo application where the API is used: https://detect-text-toxicity.vercel.app/
