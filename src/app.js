@@ -32,7 +32,7 @@ const loadModel = async () => {
 loadModel();
 
 // build multiple CRUD interfaces:
-app.get("/", (req, res) => res.send("Nothing here"));
+app.get("/", (req, res) => res.send("Nothing here!"));
 
 app.post("/", (req, res) => {
   const { text } = req.body;
