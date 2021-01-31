@@ -10,12 +10,6 @@
     "test": "mocha --exit"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
-  },
-  "license": "MIT",
   "dependencies": {
     "@tensorflow-models/toxicity": "^1.2.2",
     "@tensorflow/tfjs-node": "^2.4.0",
