@@ -4,7 +4,6 @@ const helmet = require("helmet");
 const cors = require("cors");
 require("@tensorflow/tfjs-node");
 const toxicity = require("@tensorflow-models/toxicity");
-const translate = require("@vitalets/google-translate-api");
 
 require("dotenv").config();
 
@@ -36,29 +35,18 @@ loadModel();
 app.get("/", (req, res) => res.send("Nothing here"));
 
 app.post("/", (req, res) => {
-  const { text, key } = req.body;
-  if (key === "m1ZJCGh5Q3TX") {
-    translate(text, { to: "en" })
-      .then((translatedData) => {
-        model
-          .classify(translatedData.text)
-          .then((text) => {
-            console.log(text);
-            res.send({ result: text });
-          })
-          .catch((e) => {
-            console.error(e);
-            res.status(404).send("Something went wrong");
-          });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(404).send("Something went wrong");
-      });
-  } else {
-    console.error("Invalid api key");
-    res.status(404).send("Something went wrong");
-  }
+  const { text } = req.body;
+
+  model
+    .classify(translatedData.text)
+    .then((text) => {
+      console.log(text);
+      res.send({ result: text });
+    })
+    .catch((e) => {
+      console.error(e);
+      res.status(404).send("Something went wrong");
+    });
 });
 
 app.use(middlewares.notFound);
