@@ -38,10 +38,9 @@ app.post("/", (req, res) => {
   const { text } = req.body;
 
   model
-    .classify(translatedData.text)
-    .then((text) => {
-      console.log(text);
-      res.send({ result: text });
+    .classify(text)
+    .then((result) => {
+      res.send({ result });
     })
     .catch((e) => {
       console.error(e);
